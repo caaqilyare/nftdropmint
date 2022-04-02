@@ -13,7 +13,7 @@ export default function  Home ({ collections }: Props) {
     
     <div className="min-h-screen bg-black">
       <Head>
-        <title>Create Next App</title>
+        <title>NFTDrop Challenge</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
