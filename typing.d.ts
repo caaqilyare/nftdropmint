@@ -20,7 +20,7 @@ export interface Collection {
     _id: string
     title: string
     description: string
-    ntfcCollectionName: string
+    nftCollectionName: string
     address: string
     slug:{
         current: string
