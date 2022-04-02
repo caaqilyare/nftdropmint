@@ -25,7 +25,7 @@ export default function  Home ({ collections }: Props) {
                CAAQIL
              </span> NFT Market Place
            </h1>
-           <main className='bg-purple-700/20 p-10 shadow-xl shadow-green-400/20'>
+           <main className='bg-purple-700/20 p-10 shadow-xl shadow-green-400/20 outline outline-offset-2 outline-1 rounded-3xl'>
              <div className='grid space-x-3 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'>
                {collections.map((collection) => (
                 <Link href={`/nft/${collection.slug.current}`}>
