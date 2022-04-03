@@ -73,7 +73,7 @@ function NFTDrop({collection} : Props) {
               const claimedToken = tx[0].id
               const claimedNFT = await tx[0].data()
 
-              toast("You have seccessfully claimed NFT Collection", {
+              toast("You have seccessfully claimed NFT Collection Check Your Opensea Profile Now", {
                 duration: 8000,
                 style: {
                   background: 'green',
