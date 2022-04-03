@@ -109,81 +109,136 @@ function NFTDrop({collection} : Props) {
     <title>NFTDrop Challenge</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-
     <main >
-      <div className='to-blue-400/20 bg-gradient-to-tr from-purple-400/20'>
-          <Toaster />
-        <div className='mx-auto flex min-h-screen max-w-7xl flex-col py-20 px-10 2xl:px-0 '>
-            <header className='flex item-center justify-between'>
-                 <Link href='/'>
-                <h1 className='lg:mb-10 lg:text-4xl w-52 cursor-pointer tex-xl font-extralight sm:w-80 text-white'> 
-                <span className='font-extrabold underline decoration-pink-600/50'>
-                        CAAQIL
-                </span> NFT Market Place   
-                </h1>
-                </Link>
-                { address ?
-                <button onClick={() => (address ? disconnect() : connectWithMetamask()) } className=' rounded-2xl bg-red-500 px-4 py-2 text-xs font-bold text-white lg:px-10 lg:py-6 lg:mt-0 lg:h-16 lg:text-sm'>Sign Out</button>
-                : 
-                <button onClick={() => (address ? disconnect() : connectWithMetamask()) } className='rounded-2xl bg-green-500 px-4 py-2 text-xs font-bold text-white lg:px-10 lg:py-6 lg:mt-0 lg:h-16 lg:text-sm'>Sing In</button>
-                }
-            </header>
-            {address && (
-               <p className='text-center text-sm text-green-400'>
-               You're logged in with wallet {address.substring(0,5)}.... {address.substring(address.length - 5)}
-             </p>
-           )}
-            <br /> 
-         <main className='bg-purple-700/20 p-12 shadow-xl shadow-green-400/20 outline outline-offset-2 outline-1 rounded-2xl'>
-           <div className='grid space-x-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-2'>
-
-               <div className='flex cursor-pointer flex-col items-left transition-all duration-200 hover:scale-105'>
-               <img
-               className='h-60 w-60 rounded-3xl object-cover'
-                src={urlFor(collection.previewImage).url()}
-                alt="" />
-                <div className='p-5'>
-                  <h2 className='text-3xl text-white'>
-                   {collection.nftCollectionName}
-                  </h2>
-                  <p className='mt-2 text-sm text-gray-400'>
-                     {collection.description}
-                  </p>
-                </div>
-             </div>
-             <div className='flex cursor-pointer flex-col-4 items-center'>
-                <div className='p-1 mt-1'>
-                  <h2 className='text-2xl text-white'>
-                   {collection.title}
-                  </h2>
-                 {loading ? (
-                 <p className='mt-16 h-16 text-md text-center text-green-400'>
-                      Loading Supply Please wait ....
-                  </p>
-                 ) : (
-                <p className='mt-16 h-16 text-md text-center text-red-400'>
-                    {claimedSupply} / {totalSupply?.toString()} NFT's claimed
+     <div className='to-blue-400[0.35] to-blue-400[0.25] bg-gradient-to-tr from-purple-400/[0.35] from-purple-400/[0.15]'>
+       <div className='mx-auto flex min-h-screen max-w-7xl flex-col p-8'>
+       <header className='z-50 flex flex-col items-center justify-between border-b border-pink-400/[0.15] pb-8 md:flex-row md:pb-10'>
+            <h1 className='cursor-pointer font-poppins text-sm font-extralight uppercase tracking-wider text-purple-200/75 text-purple-300/50 md:text-xl'>
+              THE BEST <span className='font-medium text-purple-800 text-purple-400'> NFT
+              </span> MINTING
+            </h1>
+            <div className='mt-6 flex flex-col items-center space-y-4 md:mt-0 md:flex-row md:space-y-0 md:space-x-5'>
+             
+              {address && (
+                 <p className='text-center text-sm text-amber-600 text-amber-300'>
+                You're logged in with wallet {address.substring(0,5)}.... {address.substring(address.length - 5)}
                 </p>
-                 )}                  
+                )} 
+              
+              <div className='flex items-center space-x-5'>
+                {address ? 
+                <button onClick={() => (address ? disconnect() : connectWithMetamask()) }>
+                <div className='group relative'>
+                  <div className='animate-tilt group-hover:duration-600 absolute -inset-0.5 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-30 blur transition duration-1000 group-hover:opacity-100'></div>
+                  <div  className='relative flex items-center space-x-4 divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none text-black transition duration-200 hover:text-purple-500 bg-black text-white hover:text-purple-300'> 
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> SIGN OUT 
+                  </div>
                 </div>
-             </div>
-           </div>
-           
-         </main>
-         <button onClick={mintNft} disabled={loading || claimedSupply === totalSupply?.toNumber() || !address} className='mt-16 h-16 w-full rounded-full bg-green-500 font-bold text-white disabled:bg-gray-400'>
-                        {loading ? (
-                            <>Loading ..</>
-                        ) : claimedSupply == totalSupply?.toNumber() ? (
-                            <>SOLD OUT</> 
-                        ) : !address ? (
-                            <>Sign in to mint</>
-                        ) : (
-                            <>Mint NFT ({priceInEth} ETH)</>
-                        )}
-            </button>
-        </div>
-
-      </div>
+              </button> : 
+              <button onClick={() => (address ? disconnect() : connectWithMetamask()) }>
+              <div className='group relative'>
+                <div className='animate-tilt group-hover:duration-600 absolute -inset-0.5 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-30 blur transition duration-1000 group-hover:opacity-100'></div>
+                <div  className='relative flex items-center space-x-4 divide-gray-600 rounded-lg bg-black px-7 py-4 leading-none text-white transition duration-200 hover:text-purple-500 bg-black text-white hover:text-purple-300'> 
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> SIGN IN 
+                </div>
+              </div>
+            </button>  
+              }
+              </div>
+            </div>
+          </header>
+          {/* section */}
+          <Toaster />
+          <div className='mt-8 flex flex-grow items-center justify-center md:mt-0 md:pt-12'>
+            <div className='position: fixed; z-index: 9999; inset: 16px; pointer-events: none;'></div>
+            <section className='grid w-full grid-cols-2 items-center gap-0 rounded-xl bg-gradient-to-tr from-purple-400/[0.10] to-blue-400/[0.05] p-6 from-purple-800/[0.10] to-blue-800/[0.05] md:grid-cols-4 md:gap-8 lg:grid-cols-5 lg:items-stretch lg:gap-12'>
+              <div className='col-span-2'>
+                <div className='my-auto rounded-xl bg-gradient-to-bl from-pink-600/[0.3] to-blue-400/[0.3] p-1.5 transition duration-500 ease-in-out hover:rotate-1 from-pink-600/[0.1] to-blue-400/[0.1] md:p-3'>
+                  <span className='box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;'>
+                    <span className='box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;'></span>
+                    <img
+                    className='h-full w-full'
+                    src={urlFor(collection.previewImage).url()} alt="" />
+                  </span>
+                </div>
+               
+              </div>
+              <div className='col-span-2 flex flex-col justify-center md:col-span-2 lg:col-span-3'>
+                  <div className='flex flex-grow flex-col items-center px-1 pt-8 md:px-0 md:pt-0'>
+                    <br /> <br />
+                    <h1 className='font-poppins text-4xl font-medium text-white lg:text-4xl '>
+                      {collection.nftCollectionName}
+                    </h1> <br />
+                    <p className='text-md font-poppins font-extralight uppercase tracking-wider text-amber-600 lg:text-lg'>
+                      {collection.title}
+                    </p> <br />
+                    <p className='ont-poppins text-white/75'>
+                      {collection.description}
+                    </p> <br />
+                    {loading ? (
+                       <p className='inline-block w-auto animate-pulse rounded-md py-3 px-4 font-poppins text-lg font-medium uppercase shadow-lg bg-black text-green-500 lg:mb-0'>
+                       Loading supply count ...
+                       </p>
+                    ):(
+                      <p className='mb-6 mt-2 inline-block w-auto rounded-md py-3 px-4 font-poppins text-lg font-medium uppercase text-green-600 shadow-lg bg-black  lg:mb-0'>
+                                        {claimedSupply} / {totalSupply?.toString()} NFT's claimed
+                                        </p>
+                    ) }
+                  
+                    {/* <p className='inline-block w-auto animate-pulse rounded-md py-3 px-4 font-poppins text-lg font-medium uppercase shadow-lg bg-black text-green-500 lg:mb-0'>
+                    Loading supply count ...
+                    </p> */} 
+                    <br /> <br /> <br />
+                    <div className='space-between flex w-full flex-col items-center gap-3 md:gap-4 lg:flex-row lg:pb-2'>
+                      <div className='group relative w-full cursor-pointer'>
+                        <div className='relative flex items-center space-x-4 divide-gray-600 rounded-2xl px-7 py-4 leading-none text-white transition duration-200 hover:text-purple-500 text-white hover:text-purple-30'>
+                          <button onClick={mintNft} disabled={loading || claimedSupply === totalSupply?.toNumber() || !address}   className=' items-center relative flex w-full cursor-pointer items-center justify-between space-x-4 divide-gray-600 rounded-lg px-7 py-4 leading-none transition duration-200  disabled:cursor-not-allowed disabled:bg-gray-400/50 disabled:hover:text-black bg-black text-white  disabled: hover:text-white lg:justify-start'>
+                            {loading ? (
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                            ) : (
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> 
+                            )}
+                          <span className='font-poppins text-lg capitalize tracking-wider transition duration-200 '>
+                          {loading ? (
+                            
+                                  <>Loading ..</>
+                              ) : claimedSupply == totalSupply?.toNumber() ? (
+                                  <>SOLD OUT</> 
+                              ) : !address ? (
+                                  <>Sign in to mint</>
+                              ) : (
+                                  <>MINT ({priceInEth} ETH)</>
+                              )}
+                          </span>
+                          </button>
+                        </div>
+                      </div>
+                      <Link href='/'>
+                        <div className='group relative w-full cursor-pointer'>
+                          <div className='relative flex items-center space-x-4 divide-gray-600 rounded-2xl px-7 py-4 leading-none text-white transition duration-200 hover:text-purple-500 text-white hover:text-purple-30'>
+                            <button   className=' items-center relative flex w-full cursor-pointer items-center justify-between space-x-4 divide-gray-600 rounded-lg px-7 py-4 leading-none transition duration-200  disabled:hover:text-black bg-black text-white  disabled: hover:text-white'>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                            <span className='font-poppins text-lg capitalize tracking-wider transition duration-200 '>
+                              GO BACK
+                            </span>
+                            </button>
+                          </div>
+                        </div>
+                      </Link>
+                     
+                    </div>
+                    
+                  </div>
+                </div>
+            </section>
+          </div>
+          <div>
+          </div>
+       </div>
+       <footer className='border-t border-pink-400/[0.15] py-6 text-center font-poppins text-sm font-medium uppercase bg-black/25 text-white'>
+          MADE BY <span className='text-purple-400'> CAAQIL</span>
+        </footer>
+     </div>
     </main>
   </div>
   )
