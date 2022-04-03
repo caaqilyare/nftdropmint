@@ -146,19 +146,19 @@ export default function  Home ({ collections }: Props) {
                     <div className='relative flex items-center justify-between space-x-4 divide-gray-600 rounded-xl bg-black px-1.5 leading-none text-blue-200 transition duration-200 hover:text-purple-300 bg-black sm:p-2'>
                       <div className='duration-600 w-full origin-top-left rounded-2xl p-3 sm:w-auto md:w-full'>
                         <div className='flex items-center gap-4 sm:flex-col md:flex-row md:gap-6'>
-                          <div className=' rounded-xl bg-gradient-to-bl from-pink-600/25 to-blue-400/25 p-1.5'>
+                          <div className='items-center rounded-1xl bg-gradient-to-bl from-pink-600/25 to-blue-400/25 p-1.5'>
                             <img 
-                            className='lg:w-3/4 lg:h-24 w-16 flex-shrink rounded-2xl object-cover sm:w-full md:w-32'
+                            className='lg:w-24 lg:h-24 h-16 flex-shrink rounded-2xl sm:h-48 sm:w-48'
                             src={urlFor(collection.previewImage).url()} alt="" />
                           </div>
                           <div className='text-left sm:text-center md:text-left lg:py-8'>
                             <h1 className='font-poppins text-3xl text-amber-500 md:text-3xl xl:text-2xl'>
                             {collection.title}
                             </h1>
-                            <p className='mt-2 hidden font-poppins text-xs font-extralight text-white text-white sm:block'>
+                            <p className='mt-2 hidden font-poppins text-xs font-extralight text-white sm:block'>
                             {collection.description.substring(0,45)}
                             </p>
-                            <p className='mt-2 font-poppins font-medium text-purple-600 text-purple-400'>
+                            <p className='mt-2 font-poppins font-medium text-purple-600'>
                             {collection.nftCollectionName}
                             </p>
 
