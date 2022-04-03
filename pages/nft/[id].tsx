@@ -110,7 +110,7 @@ function NFTDrop({collection} : Props) {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main >
-     <div className='to-blue-400[0.35] to-blue-400[0.25] bg-gradient-to-tr from-purple-400/[0.35] from-purple-400/[0.15]'>
+     <div className='to-blue-400[0.35] to-blue-400[0.25] bg-gradient-to-tr from-purple-400/[0.35] '>
        <div className='mx-auto flex min-h-screen max-w-7xl flex-col p-8'>
        <header className='z-50 flex flex-col items-center justify-between border-b border-pink-400/[0.15] pb-8 md:flex-row md:pb-10'>
             <h1 className='cursor-pointer font-poppins text-sm font-extralight uppercase tracking-wider text-purple-200/75 text-purple-300/50 md:text-xl'>
@@ -131,7 +131,7 @@ function NFTDrop({collection} : Props) {
                 <div className='group relative'>
                   <div className='animate-tilt group-hover:duration-600 absolute -inset-0.5 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-30 blur transition duration-1000 group-hover:opacity-100'></div>
                   <div  className='relative flex items-center space-x-4 divide-gray-600 rounded-lg bg-white px-7 py-4 leading-none text-black transition duration-200 hover:text-purple-500 bg-black text-white hover:text-purple-300'> 
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> SIGN OUT 
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> SIGN OUT 
                   </div>
                 </div>
               </button> : 
@@ -139,7 +139,7 @@ function NFTDrop({collection} : Props) {
               <div className='group relative'>
                 <div className='animate-tilt group-hover:duration-600 absolute -inset-0.5 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 opacity-30 blur transition duration-1000 group-hover:opacity-100'></div>
                 <div  className='relative flex items-center space-x-4 divide-gray-600 rounded-lg bg-black px-7 py-4 leading-none text-white transition duration-200 hover:text-purple-500 bg-black text-white hover:text-purple-300'> 
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> SIGN IN 
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> SIGN IN 
                 </div>
               </div>
             </button>  
@@ -151,9 +151,9 @@ function NFTDrop({collection} : Props) {
           <Toaster />
           <div className='mt-8 flex flex-grow items-center justify-center md:mt-0 md:pt-12'>
             <div className='position: fixed; z-index: 9999; inset: 16px; pointer-events: none;'></div>
-            <section className='grid w-full grid-cols-2 items-center gap-0 rounded-xl bg-gradient-to-tr from-purple-400/[0.10] to-blue-400/[0.05] p-6 from-purple-800/[0.10] to-blue-800/[0.05] md:grid-cols-4 md:gap-8 lg:grid-cols-5 lg:items-stretch lg:gap-12'>
+            <section className='grid w-full grid-cols-2 items-center gap-0 rounded-xl bg-gradient-to-tr  p-6 from-purple-800/[0.10] to-blue-800/[0.05] md:grid-cols-4 md:gap-8 lg:grid-cols-5 lg:items-stretch lg:gap-12'>
               <div className='col-span-2'>
-                <div className='my-auto rounded-xl bg-gradient-to-bl from-pink-600/[0.3] to-blue-400/[0.3] p-1.5 transition duration-500 ease-in-out hover:rotate-1 from-pink-600/[0.1] to-blue-400/[0.1] md:p-3'>
+                <div className='my-auto rounded-xl bg-gradient-to-bl p-1.5 transition duration-500 ease-in-out hover:rotate-1 from-pink-600/[0.1] to-blue-400/[0.1] md:p-3'>
                   <span className='box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;'>
                     <span className='box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;'></span>
                     <img
@@ -194,9 +194,9 @@ function NFTDrop({collection} : Props) {
                         <div className='relative flex items-center space-x-4 divide-gray-600 rounded-2xl px-7 py-4 leading-none text-white transition duration-200 hover:text-purple-500 text-white hover:text-purple-30'>
                           <button onClick={mintNft} disabled={loading || claimedSupply === totalSupply?.toNumber() || !address}   className=' items-center relative flex w-full cursor-pointer items-center justify-between space-x-4 divide-gray-600 rounded-lg px-7 py-4 leading-none transition duration-200  disabled:cursor-not-allowed disabled:bg-gray-400/50 disabled:hover:text-black bg-black text-white  disabled: hover:text-white lg:justify-start'>
                             {loading ? (
-                               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 animate-spin" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
                             ) : (
-                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> 
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path> </svg> 
                             )}
                           <span className='font-poppins text-lg capitalize tracking-wider transition duration-200 '>
                           {loading ? (
@@ -217,7 +217,7 @@ function NFTDrop({collection} : Props) {
                         <div className='group relative w-full cursor-pointer'>
                           <div className='relative flex items-center space-x-4 divide-gray-600 rounded-2xl px-7 py-4 leading-none text-white transition duration-200 hover:text-purple-500 text-white hover:text-purple-30'>
                             <button   className=' items-center relative flex w-full cursor-pointer items-center justify-between space-x-4 divide-gray-600 rounded-lg px-7 py-4 leading-none transition duration-200  disabled:hover:text-black bg-black text-white  disabled: hover:text-white'>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
                             <span className='font-poppins text-lg capitalize tracking-wider transition duration-200 '>
                               GO BACK
                             </span>
