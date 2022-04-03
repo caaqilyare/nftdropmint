@@ -23,9 +23,9 @@ export default function  Home ({ collections }: Props) {
       <div className='to-blue-400[0.35] to-blue-400[0.25] bg-gradient-to-tr from-purple-400/[0.35] from-purple-400/[0.15] text-white'>
         <div className='mx-auto flex min-h-screen max-w-7xl flex-col p-8'>
           <header className='z-50 flex flex-col items-center justify-between border-b border-pink-400/[0.15] pb-8 md:flex-row md:pb-10'>
-            <h1 className='cursor-pointer font-poppins text-sm font-extralight uppercase tracking-wider text-purple-200/75 text-purple-300/50 md:text-xl'>
-              THE BEST <span className='font-medium text-purple-800 text-purple-400'> NFT
-              </span> MINTING
+            <h1 className='cursor-pointer font-poppins text-sm font-extralight uppercase tracking-wider text-white md:text-xl'>
+              THE BEST <span className='font-medium text-purple-800'> NFT
+              </span> COLLECTION
             </h1>
             <div className='mt-6 flex flex-col items-center space-y-4 md:mt-0 md:flex-row md:space-y-0 md:space-x-5'>
              
@@ -148,15 +148,15 @@ export default function  Home ({ collections }: Props) {
                         <div className='flex items-center gap-4 sm:flex-col md:flex-row md:gap-6'>
                           <div className=' rounded-xl bg-gradient-to-bl from-pink-600/25 to-blue-400/25 p-1.5'>
                             <img 
-                            className='lg:w-38 h-auto w-16 flex-shrink rounded-2xl object-cover sm:w-full md:w-32'
+                            className='lg:w-3/4 lg:h-24 w-16 flex-shrink rounded-2xl object-cover sm:w-full md:w-32'
                             src={urlFor(collection.previewImage).url()} alt="" />
                           </div>
                           <div className='text-left sm:text-center md:text-left lg:py-8'>
-                            <h6 className='font-poppins text-xs text-amber-500 text-amber-300 md:text-xs xl:text-1xl'>
+                            <h1 className='font-poppins text-3xl text-amber-500 md:text-3xl xl:text-2xl'>
                             {collection.title}
-                            </h6>
+                            </h1>
                             <p className='mt-2 hidden font-poppins text-xs font-extralight text-white text-white sm:block'>
-                            {collection.description}
+                            {collection.description.substring(0,45)}
                             </p>
                             <p className='mt-2 font-poppins font-medium text-purple-600 text-purple-400'>
                             {collection.nftCollectionName}
@@ -177,7 +177,7 @@ export default function  Home ({ collections }: Props) {
           </div>
         </div>
         <footer className='border-t border-pink-400/[0.15] bg-black/25 py-6 text-center font-poppins text-sm font-medium uppercase bg-black/25 text-white'>
-          MADE BY <span className='text-purple-400'> CAAQIL</span>
+          MADE BY <span className='text-purple-400'> MUNASAR ABUUKAR</span>
         </footer>
       </div>
     </div>

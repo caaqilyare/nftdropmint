@@ -113,14 +113,14 @@ function NFTDrop({collection} : Props) {
      <div className='to-blue-400[0.35] to-blue-400[0.25] bg-gradient-to-tr from-purple-400/[0.35] '>
        <div className='mx-auto flex min-h-screen max-w-7xl flex-col p-8'>
        <header className='z-50 flex flex-col items-center justify-between border-b border-pink-400/[0.15] pb-8 md:flex-row md:pb-10'>
-            <h1 className='cursor-pointer font-poppins text-sm font-extralight uppercase tracking-wider text-purple-200/75 text-purple-300/50 md:text-xl'>
-              THE BEST <span className='font-medium text-purple-800 text-purple-400'> NFT
-              </span> MINTING
+            <h1 className='cursor-pointer font-poppins text-sm font-extralight uppercase tracking-wider text-white md:text-xl'>
+              THE BEST <span className='font-medium text-purple-800'> NFT
+              </span> COLLECTION
             </h1>
             <div className='mt-6 flex flex-col items-center space-y-4 md:mt-0 md:flex-row md:space-y-0 md:space-x-5'>
              
               {address && (
-                 <p className='text-center text-sm text-amber-600 text-amber-300'>
+                 <p className='text-center text-sm text-amber-600'>
                 You're logged in with wallet {address.substring(0,5)}.... {address.substring(address.length - 5)}
                 </p>
                 )} 
@@ -151,13 +151,13 @@ function NFTDrop({collection} : Props) {
           <Toaster />
           <div className='mt-8 flex flex-grow items-center justify-center md:mt-0 md:pt-12'>
             <div className='position: fixed; z-index: 9999; inset: 16px; pointer-events: none;'></div>
-            <section className='grid w-full grid-cols-2 items-center gap-0 rounded-xl bg-gradient-to-tr  p-6 from-purple-800/[0.10] to-blue-800/[0.05] md:grid-cols-4 md:gap-8 lg:grid-cols-5 lg:items-stretch lg:gap-12'>
+            <section className='grid w-full grid-cols-2 items-center gap-0 rounded-xl   p-6 md:grid-cols-4 md:gap-8 lg:grid-cols-5 lg:items-stretch lg:gap-12'>
               <div className='col-span-2'>
                 <div className='my-auto rounded-xl bg-gradient-to-bl p-1.5 transition duration-500 ease-in-out hover:rotate-1 from-pink-600/[0.1] to-blue-400/[0.1] md:p-3'>
                   <span className='box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;'>
                     <span className='box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;'></span>
                     <img
-                    className='h-full w-full'
+                    className='lg:h-full lg:w-full'
                     src={urlFor(collection.previewImage).url()} alt="" />
                   </span>
                 </div>
@@ -172,7 +172,7 @@ function NFTDrop({collection} : Props) {
                     <p className='text-md font-poppins font-extralight uppercase tracking-wider text-amber-600 lg:text-lg'>
                       {collection.title}
                     </p> <br />
-                    <p className='ont-poppins text-white/75'>
+                    <p className='ont-poppins text-white/75 text-center'>
                       {collection.description}
                     </p> <br />
                     {loading ? (
@@ -184,11 +184,7 @@ function NFTDrop({collection} : Props) {
                                         {claimedSupply} / {totalSupply?.toString()} NFT's claimed
                                         </p>
                     ) }
-                  
-                    {/* <p className='inline-block w-auto animate-pulse rounded-md py-3 px-4 font-poppins text-lg font-medium uppercase shadow-lg bg-black text-green-500 lg:mb-0'>
-                    Loading supply count ...
-                    </p> */} 
-                    <br /> <br /> <br />
+                    <br /> <br /> <br /> <br /> <br /> 
                     <div className='space-between flex w-full flex-col items-center gap-3 md:gap-4 lg:flex-row lg:pb-2'>
                       <div className='group relative w-full cursor-pointer'>
                         <div className='relative flex items-center space-x-4 divide-gray-600 rounded-2xl px-7 py-4 leading-none text-white transition duration-200 hover:text-purple-500 text-white hover:text-purple-30'>
@@ -236,7 +232,7 @@ function NFTDrop({collection} : Props) {
           </div>
        </div>
        <footer className='border-t border-pink-400/[0.15] py-6 text-center font-poppins text-sm font-medium uppercase bg-black/25 text-white'>
-          MADE BY <span className='text-purple-400'> CAAQIL</span>
+          MADE BY <span className='text-purple-400'> MUNASAR ABUUKAR</span>
         </footer>
      </div>
     </main>
