@@ -158,7 +158,7 @@ function NFTDrop({collection} : Props) {
                     <span className='box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;'></span>
                     <img
                     className='lg:h-full lg:w-full'
-                    src={urlFor(collection.previewImage).url()} alt="" />
+                    src={urlFor(collection.mainImage).url()} alt="" />
                   </span>
                 </div>
                
